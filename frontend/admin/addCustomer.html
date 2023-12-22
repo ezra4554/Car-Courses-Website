@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Page Admin</title>
+    <link rel="stylesheet" href="../assets/css/style.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <div
+      class="overlay absolute bg-black bg-opacity-45 w-screen h-screen opacity-0 pointer-events-none"
+    ></div>
+    <div
+      class="modal w-1/2 p-5 rounded-2xl border-1 shadow-xl bg-white bg-opacity-100 absolute flex flex-col items-center opacity-0 transform translate-x-1/2 transition ease-in delay-200"
+    >
+      <div class="field w-1/2">
+        <label class="label font-bold">Nama</label>
+        <div class="control">
+          <input
+            type="text"
+            id="nama"
+            class="mt-1 px-3 py-2 bg-white border shadow-sm border-slate-300 placeholder-slate-400 focus:outline-none focus:border-sky-500 focus:ring-sky-500 block w-full rounded-md sm:text-sm focus:ring-1"
+            placeholder="eg. Ezra"
+          />
+        </div>
+      </div>
+
+      <div class="field w-1/2">
+        <label class="label font-bold">Email</label>
+        <div class="control">
+          <input
+            type="email"
+            id="email"
+            class="mt-1 px-3 py-2 bg-white border shadow-sm border-slate-300 placeholder-slate-400 focus:outline-none focus:border-sky-500 focus:ring-sky-500 block w-full rounded-md sm:text-sm focus:ring-1"
+            placeholder="eg. you@example.com"
+          />
+        </div>
+      </div>
+      <div class="field w-1/2">
+        <label class="label font-bold">Password</label>
+        <div class="control">
+          <input
+            type="password"
+            id="password"
+            class="mt-1 px-3 py-2 bg-white border shadow-sm border-slate-300 placeholder-slate-400 focus:outline-none focus:border-sky-500 focus:ring-sky-500 block w-full rounded-md sm:text-sm focus:ring-1"
+            placeholder="eg. xxx"
+          />
+        </div>
+      </div>
+      <div class="field w-1/2">
+        <label class="label font-bold">Tanggal Lahir</label>
+        <div class="control">
+          <input
+            type="date"
+            id="tgl_lahir"
+            class="mt-1 px-3 py-2 bg-white border shadow-sm border-slate-300 placeholder-slate-400 focus:outline-none focus:border-sky-500 focus:ring-sky-500 block w-full rounded-md sm:text-sm focus:ring-1"
+          />
+        </div>
+      </div>
+
+      <div class="field w-1/2">
+        <label class="label font-bold">Credit Course</label>
+        <div class="control">
+          <input
+            type="text"
+            id="credit"
+            class="mt-1 px-3 py-2 bg-white border shadow-sm border-slate-300 placeholder-slate-400 focus:outline-none focus:border-sky-500 focus:ring-sky-500 block w-full rounded-md sm:text-sm focus:ring-1"
+            placeholder="eg. 100"
+          />
+        </div>
+      </div>
+      <div class="field w-1/2">
+        <label class="label font-bold">Role</label>
+        <div class="control">
+          <input
+            type="text"
+            id="role"
+            disabled
+            class="cursor-not-allowed px-3 py-2 bg-white border shadow-sm border-slate-300 placeholder-slate-400 focus:outline-none focus:border-sky-500 focus:ring-sky-500 block w-full rounded-md sm:text-sm focus:ring-1"
+            value="Customer"
+          />
+        </div>
+      </div>
+      <div class="field w-1/2">
+        <label class="label font-bold">Keterangan</label>
+        <div class="control">
+          <input
+            type="text"
+            id="keterangan"
+            disabled
+            class="cursor-not-allowed px-3 py-2 bg-white border shadow-sm border-slate-300 placeholder-slate-400 focus:outline-none focus:border-sky-500 focus:ring-sky-500 block w-full rounded-md sm:text-sm focus:ring-1"
+            value="Aktif"
+          />
+        </div>
+        <div class="flex gap-2 w-full justify-center">
+          <button
+            id="modalAdd"
+            class="bg-green-400 rounded-xl w-1/4 p-2 hover:bg-green-200 text-sm mt-2"
+          >
+            Add
+          </button>
+          <button
+            id="modalClose"
+            class="bg-red-400 rounded-xl w-1/4 p-2 hover:bg-red-200 text-sm mt-2"
+          >
+            Close
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="nav-top flex items-center h-auto w-full">
+      <div class="logo">
+        <div class="img-logo"></div>
+        <a class="text-white" href="index.html">LOGO</a>
+      </div>
+      <ul>
+        <li><a class="text-white" href="./index.html">HOME</a></li>
+        <li><a class="text-white" href="./about.html">ABOUT</a></li>
+        <li>
+          <a class="text-white" href="./contact.html">CONTACT</a>
+        </li>
+        <li><a class="text-white login" href="./auth.html">LOGIN</a></li>
+      </ul>
+    </div>
+
+    <div class="grid grid-flow-col w-screen">
+      <div
+        class="sidebar h-screen w-[250px] bg-neutral-500 top-0 bot-0 overflow-y-auto text-white"
+      >
+        <div class="text-xl mt-5 justify-center flex">
+          <div class="img-logo"></div>
+          <h1>Hai, Admin!</h1>
+        </div>
+        <hr class="my-2 text-gray-600 text-start" />
+        <div class="flex flex-col justify-center mx-3">
+          <h1 class="text-amber-200">MAIN</h1>
+          <div
+            class="menu cursor-pointer hover:bg-[#BCBCBC] rounded-md ease-in duration-200 p-2"
+            id="menuDashboard"
+          >
+            <i class="fa-solid fa-house mr-3"></i>
+            Dashboard
+          </div>
+          <div
+            class="menu-dropdown cursor-pointer hover:bg-[#BCBCBC] rounded-md ease-in duration-200 p-2"
+          >
+            <i class="fa-solid fa-users mr-3"></i>
+            Manage Customer
+            <i class="fa-solid fa-chevron-right ml-2"></i>
+          </div>
+          <ul class="drop-down max-h-0 overflow-y-hidden ml-2">
+            <li
+              class="text-sm ml-9 cursor-pointer hover:bg-[#BCBCBC] rounded-md mt-2"
+              id="menuAddCustomer"
+            >
+              Add Customer
+            </li>
+            <li
+              class="text-sm ml-9 mt-1 cursor-pointer hover:bg-[#BCBCBC] rounded-md"
+              id="menuUpdateCustomer"
+            >
+              Update Customer
+            </li>
+          </ul>
+          <div
+            class="menu-dropdown cursor-pointer hover:bg-[#BCBCBC] rounded-md ease-in duration-200 p-2"
+          >
+            <i class="fa-solid fa-user-tie mr-3"></i>
+            Manage Mentor
+            <i class="fa-solid fa-chevron-right ml-8"></i>
+          </div>
+          <ul class="drop-down max-h-0 overflow-y-hidden ml-2">
+            <li
+              class="text-sm ml-8 cursor-pointer hover:bg-[#BCBCBC] rounded-md mt-1"
+              id="menuAddMentor"
+            >
+              Add Mentor
+            </li>
+            <li
+              class="text-sm ml-8 mt-1 cursor-pointer hover:bg-[#BCBCBC] rounded-md"
+              id="menuUpdateMentor"
+            >
+              Update Mentor
+            </li>
+          </ul>
+          <h1 class="text-amber-200">SETTINGS</h1>
+          <div
+            class="menu cursor-pointer hover:bg-[#BCBCBC] rounded-md ease-in duration-200 p-2"
+            id="menuSchedule"
+          >
+            <i class="fa-solid fa-calendar-days mr-3"></i>
+            Set Schedule
+          </div>
+          <div
+            class="menu cursor-pointer hover:bg-[#BCBCBC] rounded-md ease-in duration-200 p-2"
+            id="menuCertificate"
+          >
+            <i class="fa-solid fa-print mr-3"></i>
+            Release Certificate
+          </div>
+          <div class="">
+            <div
+              class="menu cursor-pointer hover:bg-[#BCBCBC] rounded-md ease-in duration-200 p-2"
+              id="menuProfile"
+            >
+              <i class="fa-solid fa-gear mr-3"></i>
+              Profile
+            </div>
+            <div
+              class="menu cursor-pointer hover:bg-[#BCBCBC] active:bg-blue-600 rounded-md ease-in duration-200 p-2"
+              id="menuLogout"
+            >
+              <i class="fa-solid fa-right-from-bracket mr-3"></i>
+              Logout
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="content w-full relative">
+        <h1 class="text-xl">Add New Customer</h1>
+        <h2>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores non,
+          optio suscipit, eveniet labore veniam voluptatum consectetur magnam
+          expedita aspernatur adipisci laborum sapiente, velit assumenda dolorem
+          nihil consequatur! Quidem, iure?
+        </h2>
+        <button class="btn-refresh bg-gray-300 mt-5 p-2 rounded-lg">
+          <i class="fa-solid fa-rotate-right"></i>
+        </button>
+        <div
+          class="mb-5 max-h-[400px] overflow-y-auto bg-white border-3 shadow-xl rounded-xl p-5"
+        >
+          <table class="w-full table-fixed">
+            <thead>
+              <tr>
+                <th class="border-b text-start">NO</th>
+                <th class="border-b text-start">NAMA</th>
+                <th class="border-b text-start">EMAIL</th>
+                <th class="border-b text-start">PASSWORD</th>
+                <th class="border-b text-start">TANGGAL <br />LAHIR</th>
+                <th class="border-b text-start">CREDIT <br />COURSE</th>
+                <th class="border-b text-start">ROLE</th>
+                <th class="border-b text-start">KET</th>
+              </tr>
+            </thead>
+            <tbody id="tableBody"></tbody>
+          </table>
+        </div>
+        <button
+          id="add"
+          class="bg-green-400 rounded-xl w-20 p-2 hover:bg-green-200 text-sm mt-2"
+        >
+          Add
+        </button>
+      </div>
+    </div>
+    <script src="script.js"></script>
+    <script>
+      const btn = document.getElementById("add");
+      const btnModalAdd = document.getElementById("modalAdd");
+      const btnModalClose = document.getElementById("modalClose");
+      const overlay = document.querySelector(".overlay");
+      const modal = document.querySelector(".modal");
+
+      //Modal Function
+      btn.onclick = () => {
+        overlay.classList.add("opacity-100", "z-10", "pointer-events-auto");
+        modal.classList.add("opacity-100", "z-10");
+      };
+      btnModalAdd.onclick = async () => {
+        const name = document.getElementById("nama").value;
+        const email = document.getElementById("email").value;
+        const password = document.getElementById("password").value;
+        const tgl_lahir = document.getElementById("tgl_lahir").value;
+        const credit = document.getElementById("credit").value;
+
+        try {
+          const res = await fetch(
+            "https://api-coba.ezra4554.repl.co/api/auth/",
+            {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json",
+              },
+              body: JSON.stringify({
+                email,
+                password,
+                name,
+                tgl_lahir,
+                role: "Customer",
+                credit,
+                keterangan: "Aktif",
+              }),
+            }
+          );
+          if (!res.ok) {
+            console.log(await res.json());
+          } else {
+            console.log(await res.json());
+          }
+        } catch (error) {
+          console.log(res.error);
+        }
+        overlay.classList.remove("opacity-100", "z-10", "pointer-events-auto");
+        modal.classList.remove("opacity-100", "z-10");
+      };
+      btnModalClose.onclick = () => {
+        overlay.classList.remove("opacity-100", "z-10", "pointer-events-auto");
+        modal.classList.remove("opacity-100", "z-10");
+      };
+      overlay.onclick = () => {
+        overlay.classList.remove("opacity-100", "z-10", "pointer-events-auto");
+        modal.classList.remove("opacity-100", "z-10");
+      };
+
+      //Refresh Button
+      const btnRefresh = document.querySelector(".btn-refresh");
+      btnRefresh.onclick = async () => {
+        const tableBody = document.getElementById("tableBody");
+        tableBody.innerHTML = ""; //refresh ulang
+        try {
+          const res = await fetch(
+            "https://api-coba.ezra4554.repl.co/api/auth/",
+            {
+              method: "GET",
+              headers: {
+                "Content-Type": "application/json",
+              },
+            }
+          );
+          if (!res.ok) {
+            throw new Error(`HTTP error! Status: ${res.status}`);
+          }
+          const data = await res.json();
+          const customers = data.users.filter(
+            (user) => user.role === "Customer"
+          );
+          customers.forEach((user, index) => {
+            const row = document.createElement("tr");
+            const date = new Date(user.tgl_lahir);
+            const formattedDate = date.toLocaleDateString("en-GB");
+            row.innerHTML = `
+                    <td class="border-b break-words">${index + 1}</td>
+                    <td class="border-b break-words">${user.name}</td>
+                    <td class="border-b break-words">${user.email}</td>
+                    <td class="border-b break-words">${user.password}</td>
+                    <td class="border-b break-words">${formattedDate}</td>
+                    <td class="border-b break-words">${user.credit}</td>
+                    <td class="border-b break-words">${user.role}</td>
+                    <td class="border-b break-words">${user.keterangan}</td>
+                  `;
+            tableBody.appendChild(row);
+          });
+          //console.log("Customer Data:", customers);
+        } catch (error) {
+          console.error("Error:", error);
+        }
+      };
+    </script>
+  </body>
+</html>

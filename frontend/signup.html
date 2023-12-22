@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body>
+    <div class="nav-top flex items-center h-auto">
+      <div class="logo">
+        <div class="img-logo"></div>
+        <a class="text-white" href="index.html">LOGO</a>
+      </div>
+      <ul>
+        <li><a class="text-white" href="./index.html">HOME</a></li>
+        <li><a class="text-white" href="./about.html">ABOUT</a></li>
+        <li>
+          <a class="text-white" href="./contact.html">CONTACT</a>
+        </li>
+        <li><a class="text-white" href="./auth.html">LOGIN</a></li>
+      </ul>
+    </div>
+    <div class="wrap-auth is-justify-content-center">
+      <h1 class="title is-4">Sign Up Mao Nyetir</h1>
+      <div class="field">
+        <p class="control has-icons-left has-icons-right">
+          <input id="name" class="input" type="text" placeholder="Name" />
+          <span class="icon is-small is-left">
+            <i class="fas fa-envelope"></i>
+          </span>
+          <span class="icon is-small is-right">
+            <i class="fas fa-check"></i>
+          </span>
+        </p>
+      </div>
+      <div class="field">
+        <p class="control has-icons-left has-icons-right">
+          <input id="email" class="input" type="email" placeholder="Email" />
+          <span class="icon is-small is-left">
+            <i class="fas fa-envelope"></i>
+          </span>
+          <span class="icon is-small is-right">
+            <i class="fas fa-check"></i>
+          </span>
+        </p>
+      </div>
+      <div class="field">
+        <p class="control has-icons-left">
+          <input
+            id="password"
+            class="input"
+            type="password"
+            placeholder="Password"
+          />
+          <span class="icon is-small is-left">
+            <i class="fas fa-lock"></i>
+          </span>
+        </p>
+      </div>
+      <div class="field">
+        <p class="control has-icons-left">
+          <input
+            class="input tgl_lahir"
+            type="text"
+            placeholder="Tanggal Lahir"
+          />
+          <span class="icon is-small is-left">
+            <i class="fas fa-lock"></i>
+          </span>
+        </p>
+      </div>
+      <div class="field">
+        <p class="control">
+          <button class="button is-success" onclick="register()">
+            Register
+          </button>
+        </p>
+        <h1 class="subtitle is-6">
+          Do you have account?
+          <span class="create-account" onclick="login()">login here</span>
+        </h1>
+      </div>
+    </div>
+    <script>
+      function login() {
+        window.location.href = "./auth.html";
+      }
+
+      async function register() {
+        const name = document.getElementById("name").value;
+        const email = document.getElementById("email").value;
+        const password = document.getElementById("password").value;
+        const tgl_lahir = document.getElementById("tgl_lahir").value;
+
+        try {
+          const res = await fetch(
+            "https://api-coba.ezra4554.repl.co/api/auth/",
+            {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json",
+              },
+              body: JSON.stringify({ name, email, password, tgl_lahir }),
+            }
+          );
+          if (!res.ok) {
+            console.log(await res.json());
+          } else {
+            console.log(await res.json());
+          }
+        } catch (error) {
+          console.error("Error:", error);
+        }
+      }
+
+      const tgl_lahir = document.querySelector(".tgl_lahir");
+      tgl_lahir.onclick = () => {
+        let date = document.createElement("input");
+        date.type = "date";
+        date.id = "tgl_lahir";
+
+        tgl_lahir.parentNode.replaceChild(date, tgl_lahir);
+      };
+    </script>
+  </body>
+</html>
