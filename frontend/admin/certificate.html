@@ -4,7 +4,6 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Page Admin</title>
-    <link rel="stylesheet" href="../assets/css/style.css" />
     <script src="https://cdn.tailwindcss.com"></script>
     <link
       rel="stylesheet"
@@ -15,27 +14,49 @@
     />
   </head>
   <body>
-    <div class="nav-top flex items-center h-auto w-full">
-      <div class="logo">
-        <div class="img-logo"></div>
-        <a class="text-white" href="index.html">LOGO</a>
+    <div class="flex items-center h-auto p-2.5 bg-[#6b5e62]">
+      <div class="flex text-center mr-auto">
+        <div class="w-8 h-8 mr-2.5 rounded-md bg-[#404040]"></div>
+        <a class="text-white text-xl" href="../index.html">LOGO</a>
       </div>
-      <ul>
-        <li><a class="text-white" href="./index.html">HOME</a></li>
-        <li><a class="text-white" href="../about.html">ABOUT</a></li>
+      <ul class="flex gap-5 list-none">
         <li>
-          <a class="text-white" href="../contact.html">CONTACT</a>
+          <a
+            class="text-white text-xl hover:border-b-4 hover:border-[#404040]"
+            href="../index.html"
+            >HOME</a
+          >
         </li>
-        <li><a class="text-white login" href="../auth.html">LOGIN</a></li>
+        <li>
+          <a
+            class="text-white text-xl hover:border-b-4 hover:border-[#404040]"
+            href="../about.html"
+            >ABOUT</a
+          >
+        </li>
+        <li>
+          <a
+            class="text-white text-xl hover:border-b-4 hover:border-[#404040]"
+            href="../contact.html"
+            >CONTACT</a
+          >
+        </li>
+        <li>
+          <a
+            class="login text-white hover:border-b-4 hover:border-[#404040]"
+            href="../auth.html"
+            >LOGIN</a
+          >
+        </li>
       </ul>
     </div>
 
-    <div class="grid grid-flow-col w-screen">
+    <div class="grid grid-flow-col w-full">
       <div
-        class="sidebar h-screen w-[250px] bg-neutral-500 top-0 bot-0 overflow-y-auto text-white"
+        class="sidebar h-screen w-full bg-neutral-500 top-0 bot-0 overflow-y-auto text-white"
       >
         <div class="text-xl mt-5 justify-center flex">
-          <div class="img-logo"></div>
+          <div class="w-8 h-8 mr-2.5 rounded-md bg-[#404040]"></div>
           <h1>Hai, Admin!</h1>
         </div>
         <hr class="my-2 text-gray-600 text-start" />
@@ -123,7 +144,7 @@
           </div>
         </div>
       </div>
-      <div id="content" class="content w-full">
+      <div id="content" class="p-2.5 w-full">
         <h1 class="text-xl">Certificate</h1>
         <h2>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate,
@@ -164,15 +185,12 @@
         const tableBody = document.getElementById("tableBody");
         tableBody.innerHTML = ""; //refresh ulang
         try {
-          const res = await fetch(
-            "https://api-coba.ezra4554.repl.co/api/auth/",
-            {
-              method: "GET",
-              headers: {
-                "Content-Type": "application/json",
-              },
-            }
-          );
+          const res = await fetch("http://localhost:3000/api/auth/", {
+            method: "GET",
+            headers: {
+              "Content-Type": "application/json",
+            },
+          });
           if (!res.ok) {
             throw new Error(`HTTP error! Status: ${res.status}`);
           }

@@ -4,90 +4,107 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>About</title>
-    <link rel="stylesheet" href="./assets/css/style.css" />
-    <!-- <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"
-    /> -->
     <script src="https://cdn.tailwindcss.com"></script>
   </head>
   <body>
-    <div class="nav-top flex items-center h-auto">
-      <div class="logo">
-        <div class="img-logo"></div>
-        <a class="text-white" href="index.html">LOGO</a>
+    <div class="h-screen">
+      <div class="flex items-center w-full h-auto p-2.5 bg-[#6b5e62]">
+        <div class="flex text-center mr-auto">
+          <div class="w-8 h-8 mr-2.5 rounded-md bg-[#404040]"></div>
+          <a class="text-white text-xl" href="index.html">LOGO</a>
+        </div>
+        <ul class="flex gap-5 list-none">
+          <li>
+            <a
+              class="text-white text-xl hover:border-b-4 hover:border-[#404040]"
+              href="./index.html"
+              >HOME</a
+            >
+          </li>
+          <li>
+            <a
+              class="text-white text-xl hover:border-b-4 hover:border-[#404040]"
+              href="./about.html"
+              >ABOUT</a
+            >
+          </li>
+          <li>
+            <a
+              class="text-white text-xl hover:border-b-4 hover:border-[#404040]"
+              href="./contact.html"
+              >CONTACT</a
+            >
+          </li>
+          <li>
+            <a
+              class="text-white text-xl hover:border-b-4 hover:border-[#404040]"
+              href="./auth.html"
+              >LOGIN</a
+            >
+          </li>
+        </ul>
       </div>
-      <ul>
-        <li><a class="text-white" href="./index.html">HOME</a></li>
-        <li><a class="text-white" href="./about.html">ABOUT</a></li>
-        <li>
-          <a class="text-white" href="./contact.html">CONTACT</a>
-        </li>
-        <li><a class="text-white" href="./auth.html">LOGIN</a></li>
-      </ul>
-    </div>
-
-    <div class="content-about">
-      <div class="wrap-content flex flex-row items-center m-3 justify-center">
-        <div class="container-about flex flex-col w-screen">
-          <div class="flex flex-direction-rows items-center gap-3">
+      <div class="w-full h-4/5 realtive">
+        <div class="flex flex-row items-center p-3 justify-center h-full">
+          <div class="flex flex-col w-screen">
+            <div class="flex flex-direction-rows items-center gap-3">
+              <div
+                class="flex items-center justify-center h-40 w-40 bg-[#817139] text-5xl rounded-3xl cursor-pointer hover:bg-[#a89963]"
+              >
+                X
+              </div>
+              <h1 class="font-bold">Who We Are</h1>
+            </div>
             <div
-              class="card flex items-center justify-center h-40 w-40 bg-[#817139] text-5xl rounded-3xl cursor-pointer hover:bg-[#a89963]"
+              class="box-border h-fit w-fit p-4 shadow-2xl boder-5 text-xs text-left"
+            >
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aut
+              officia, a vitae, eum rerum vero vel dolore perspiciatis
+              perferendis, voluptas maiores! Quia ea beatae facere est in
+              asperiores non hic.
+            </div>
+          </div>
+          <div
+            class="flex flex-col mt-auto items-center h-96 w-screen justify-center gap-1"
+          >
+            <div
+              class="flex items-center justify-center h-40 w-40 bg-[#404040] text-5xl rounded-3xl text-white cursor-pointer hover:bg-[#6b5e62]"
             >
               X
             </div>
-            <h1 class="font-bold">Who We Are</h1>
-          </div>
-          <div
-            class="box-border h-fit w-fit p-4 shadow-2xl boder-5 text-xs text-left"
-          >
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aut
-            officia, a vitae, eum rerum vero vel dolore perspiciatis
-            perferendis, voluptas maiores! Quia ea beatae facere est in
-            asperiores non hic.
-          </div>
-        </div>
-        <div
-          class="container-about flex flex-col items-center h-96 w-screen justify-center gap-1"
-        >
-          <div
-            class="card flex items-center justify-center h-40 w-40 bg-[#404040] text-5xl rounded-3xl text-white cursor-pointer hover:bg-[#6b5e62]"
-          >
-            X
-          </div>
-          <h1 class="font-bold">Visi & Misi</h1>
-          <div
-            class="box-border h-fit w-fit p-4 shadow-2xl boder-5 text-xs text-center"
-          >
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aut
-            officia, a vitae, eum rerum vero vel dolore perspiciatis
-            perferendis, voluptas maiores! Quia ea beatae facere est in
-            asperiores non hic.
-          </div>
-        </div>
-        <div class="container-about flex flex-col w-screen">
-          <div class="flex flex-row-reverse items-center gap-3">
+            <h1 class="font-bold">Visi & Misi</h1>
             <div
-              class="card flex items-center justify-center h-40 w-40 bg-[#817139] text-5xl rounded-3xl cursor-pointer hover:bg-[#a89963]"
+              class="box-border h-fit w-fit p-4 shadow-2xl boder-5 text-xs text-center"
             >
-              X
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aut
+              officia, a vitae, eum rerum vero vel dolore perspiciatis
+              perferendis, voluptas maiores! Quia ea beatae facere est in
+              asperiores non hic.
             </div>
-            <h1 class="text-right font-bold">Filosofi Logo</h1>
           </div>
-          <div
-            class="box-border h-fit w-fit p-4 shadow-2xl boder-5 text-xs text-right"
-          >
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aut
-            officia, a vitae, eum rerum vero vel dolore perspiciatis
-            perferendis, voluptas maiores! Quia ea beatae facere est in
-            asperiores non hic.
+          <div class="flex flex-col w-screen">
+            <div class="flex flex-row-reverse items-center gap-3">
+              <div
+                class="flex items-center justify-center h-40 w-40 bg-[#817139] text-5xl rounded-3xl cursor-pointer hover:bg-[#a89963]"
+              >
+                X
+              </div>
+              <h1 class="text-right font-bold">Filosofi Logo</h1>
+            </div>
+            <div
+              class="box-border h-fit w-fit p-4 shadow-2xl boder-5 text-xs text-right"
+            >
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aut
+              officia, a vitae, eum rerum vero vel dolore perspiciatis
+              perferendis, voluptas maiores! Quia ea beatae facere est in
+              asperiores non hic.
+            </div>
           </div>
         </div>
       </div>
-    </div>
-
-    <div class="nav-bot h-auto">
-      <h4>Website Maintained by IT Teams</h4>
+      <div class="text-right w-full p-5 text-white bg-[#404040]">
+        <h4>Website Maintained by IT Teams</h4>
+      </div>
     </div>
   </body>
 </html>

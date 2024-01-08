@@ -9,16 +9,13 @@ async function checkUser() {
     return;
   }
   try {
-    const res = await fetch(
-      "https://api-coba.ezra4554.repl.co/api/auth/check",
-      {
-        method: "GET",
-        headers: {
-          Authorization: `Bearer ${token}`,
-          "Content-Type": "application/json",
-        },
-      }
-    );
+    const res = await fetch("http://localhost:3000/api/auth/check", {
+      method: "GET",
+      headers: {
+        Authorization: `Bearer ${token}`,
+        "Content-Type": "application/json",
+      },
+    });
     const data = await res.json();
     if (!res.ok) {
       console.log(data);

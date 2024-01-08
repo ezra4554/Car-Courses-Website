@@ -4,84 +4,145 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Welcome</title>
-    <link rel="stylesheet" href="./assets/css/style.css" />
     <script src="https://cdn.tailwindcss.com"></script>
   </head>
   <body>
-    <div class="nav-top flex items-center h-auto">
-      <div class="logo">
-        <div class="img-logo"></div>
-        <a class="text-white" href="index.html">LOGO</a>
+    <div class="h-screen">
+      <div class="flex items-center w-full h-auto p-2.5 bg-[#6b5e62]">
+        <div class="flex text-center mr-auto">
+          <div class="w-8 h-8 mr-2.5 rounded-md bg-[#404040]"></div>
+          <a class="text-white text-xl" href="index.html">LOGO</a>
+        </div>
+        <ul class="flex gap-5 list-none">
+          <li>
+            <a
+              class="text-white text-xl hover:border-b-4 hover:border-[#404040]"
+              href="./index.html"
+              >HOME</a
+            >
+          </li>
+          <li>
+            <a
+              class="text-white text-xl hover:border-b-4 hover:border-[#404040]"
+              href="./about.html"
+              >ABOUT</a
+            >
+          </li>
+          <li>
+            <a
+              class="text-white text-xl hover:border-b-4 hover:border-[#404040]"
+              href="./contact.html"
+              >CONTACT</a
+            >
+          </li>
+          <li>
+            <a
+              class="text-white text-xl hover:border-b-4 hover:border-[#404040]"
+              href="./auth.html"
+              >LOGIN</a
+            >
+          </li>
+        </ul>
       </div>
-      <ul>
-        <li><a class="text-white" href="./index.html">HOME</a></li>
-        <li><a class="text-white" href="./about.html">ABOUT</a></li>
-        <li>
-          <a class="text-white" href="./contact.html">CONTACT</a>
-        </li>
-        <li><a class="text-white" href="./auth.html">LOGIN</a></li>
-      </ul>
-    </div>
+      <div id="content " class="h-5/6 p-2.5 w-full">
+        <div class="w-full h-3/5 flex items-center">
+          <div
+            class="h-60 w-60 bg-[#404040] rounded-3xl text-white items-center flex justify-center text-7xl hover:bg-[#6b5e62]"
+          >
+            X
+          </div>
+          <div class="ml-6 font-bold text-4xl">
+            <h3>MAO NYETIR</h3>
+            <p>XX</p>
+          </div>
+        </div>
+        <div class="w-full h-auto flex items-center">
+          <h3 class="font-bold text-5xl ml-auto">
+            With Us <br /><span class="text-[#817139]">We Build </span>Together
+          </h3>
+        </div>
+      </div>
+      <div class="h-screen">
+        <div class="m-2.5 flex items-center justify-center">
+          <div class="flex items-center justify-center w-full mb-12">
+            <hr class="w-1/5 border-t-4 border-solid border-t-[#404040] m-4" />
+            <h4>Our Project</h4>
+            <hr class="w-1/5 border-t-4 border-solid border-t-[#404040] m-4" />
+          </div>
+        </div>
 
-    <div id="content " class="content">
-      <div class="card-one">
-        <div class="img">X</div>
-        <div class="name-pt font-bold text-4xl">
-          <h3>MAO NYETIR</h3>
-          <p>XX</p>
-        </div>
-      </div>
-      <div class="card-one">
-        <h3 class="font-bold text-5xl">
-          With Us <br /><span class="quote">We Build </span>Together
-        </h3>
-      </div>
-      <div class="card-two">
-        <div class="content-divider">
-          <hr class="divider-page" />
-          <h4>Our Project</h4>
-          <hr class="divider-page" />
-        </div>
-      </div>
-      <div class="card-two">
-        <h1 class="first-year">2022</h1>
-        <div class="wrap-img-one">
-          <div class="up">
-            <div class="img-project">X</div>
-          </div>
-          <div class="down">
-            <div class="img-project">X</div>
-          </div>
-          <div class="up">
-            <div class="img-project">X</div>
-          </div>
-          <div class="down">
-            <div class="img-project">X</div>
+        <div class="m-2.5 flex items-center justify-center">
+          <h1 class="text-4xl text-right w-3/5 p-6">2022</h1>
+          <div class="flex w-2/5 h-52 gap-2.5">
+            <div>
+              <div
+                class="flex justify-center items-center w-24 h-24 text-2xl text-white bg-[#404040] rounded-xl hover:bg-[#6b5e62] hover:cursor-pointer"
+              >
+                X
+              </div>
+            </div>
+            <div class="top-1/2 relative">
+              <div
+                class="flex justify-center items-center w-24 h-24 text-2xl text-white bg-[#404040] rounded-xl hover:bg-[#6b5e62] hover:cursor-pointer"
+              >
+                X
+              </div>
+            </div>
+            <div>
+              <div
+                class="flex justify-center items-center w-24 h-24 text-2xl text-white bg-[#404040] rounded-xl hover:bg-[#6b5e62] hover:cursor-pointer hover:bg-[#6b5e62] hover:cursor-pointer"
+              >
+                X
+              </div>
+            </div>
+            <div class="top-1/2 relative">
+              <div
+                class="flex justify-center items-center w-24 h-24 text-2xl text-white bg-[#404040] rounded-xl hover:bg-[#6b5e62] hover:cursor-pointer hover:bg-[#6b5e62] hover:cursor-pointer"
+              >
+                X
+              </div>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="card-two reverse">
-        <h1 class="second-year">2023</h1>
-        <div class="wrap-img-two reverse">
-          <div class="up">
-            <div class="img-project">X</div>
-          </div>
-          <div class="down">
-            <div class="img-project">X</div>
-          </div>
-          <div class="up">
-            <div class="img-project">X</div>
-          </div>
-          <div class="down">
-            <div class="img-project">X</div>
+        <div class="m-2.5 flex items-center justify-center flex-row-reverse">
+          <h1 class="text-4xl text-left w-3/5 p-6">2023</h1>
+          <div class="flex w-2/5 h-52 gap-2.5 flex-row-reverse">
+            <div>
+              <div
+                class="flex justify-center items-center w-24 h-24 text-2xl text-white bg-[#404040] rounded-xl hover:bg-[#6b5e62] hover:cursor-pointer hover:bg-[#6b5e62] hover:cursor-pointer"
+              >
+                X
+              </div>
+            </div>
+            <div class="top-1/2 relative">
+              <div
+                class="flex justify-center items-center w-24 h-24 text-2xl text-white bg-[#404040] rounded-xl hover:bg-[#6b5e62] hover:cursor-pointer hover:bg-[#6b5e62] hover:cursor-pointer"
+              >
+                X
+              </div>
+            </div>
+            <div>
+              <div
+                class="flex justify-center items-center w-24 h-24 text-2xl text-white bg-[#404040] rounded-xl hover:bg-[#6b5e62] hover:cursor-pointer hover:bg-[#6b5e62] hover:cursor-pointer"
+              >
+                X
+              </div>
+            </div>
+            <div class="top-1/2 relative">
+              <div
+                class="flex justify-center items-center w-24 h-24 text-2xl text-white bg-[#404040] rounded-xl hover:bg-[#6b5e62] hover:cursor-pointer hover:bg-[#6b5e62] hover:cursor-pointer"
+              >
+                X
+              </div>
+            </div>
           </div>
         </div>
       </div>
-    </div>
 
-    <div class="nav-bot">
-      <h4>Website Maintained by IT Teams</h4>
+      <div class="text-right w-full p-5 mt-5 text-white bg-[#404040]">
+        <h4>Website Maintained by IT Teams</h4>
+      </div>
     </div>
-    <script src="script.js"></script>
+    <script type="text/javascript" src="frontend/script.js"></script>
   </body>
 </html>

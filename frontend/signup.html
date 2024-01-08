@@ -3,8 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link rel="stylesheet" href="./assets/css/style.css" />
+    <title>Sign Up</title>
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"
@@ -12,25 +11,41 @@
     <script src="https://cdn.tailwindcss.com"></script>
   </head>
   <body>
-    <div class="nav-top flex items-center h-auto">
-      <div class="logo">
-        <div class="img-logo"></div>
-        <a class="text-white" href="index.html">LOGO</a>
+    <div class="flex items-center w-full h-auto p-2.5 bg-[#6b5e62]">
+      <div class="flex text-center mr-auto">
+        <div class="w-8 h-8 mr-2.5 rounded-md bg-[#404040]"></div>
+        <a class="text-white text-xl" href="index.html">LOGO</a>
       </div>
-      <ul>
-        <li><a class="text-white" href="./index.html">HOME</a></li>
-        <li><a class="text-white" href="./about.html">ABOUT</a></li>
+      <ul class="flex gap-5 list-none">
         <li>
-          <a class="text-white" href="./contact.html">CONTACT</a>
+          <a
+            class="text-white text-xl hover:border-b-4 hover:border-[#404040]"
+            href="./index.html"
+            >HOME</a
+          >
         </li>
-        <li><a class="text-white" href="./auth.html">LOGIN</a></li>
+        <li>
+          <a
+            class="text-white text-xl hover:border-b-4 hover:border-[#404040]"
+            href="./about.html"
+            >ABOUT</a
+          >
+        </li>
+        <li>
+          <a
+            class="text-white text-xl hover:border-b-4 hover:border-[#404040]"
+            href="./contact.html"
+            >CONTACT</a
+          >
+        </li>
       </ul>
     </div>
-    <div class="wrap-auth is-justify-content-center">
+
+    <div class="h-screen flex flex-col text-center is-justify-content-center">
       <h1 class="title is-4">Sign Up Mao Nyetir</h1>
       <div class="field">
         <p class="control has-icons-left has-icons-right">
-          <input id="name" class="input" type="text" placeholder="Name" />
+          <input id="name" class="input w-1/4" type="text" placeholder="Name" />
           <span class="icon is-small is-left">
             <i class="fas fa-envelope"></i>
           </span>
@@ -41,7 +56,12 @@
       </div>
       <div class="field">
         <p class="control has-icons-left has-icons-right">
-          <input id="email" class="input" type="email" placeholder="Email" />
+          <input
+            id="email"
+            class="input w-1/4"
+            type="email"
+            placeholder="Email"
+          />
           <span class="icon is-small is-left">
             <i class="fas fa-envelope"></i>
           </span>
@@ -54,7 +74,7 @@
         <p class="control has-icons-left">
           <input
             id="password"
-            class="input"
+            class="input w-1/4"
             type="password"
             placeholder="Password"
           />
@@ -66,7 +86,7 @@
       <div class="field">
         <p class="control has-icons-left">
           <input
-            class="input tgl_lahir"
+            class="input tgl_lahir w-1/4"
             type="text"
             placeholder="Tanggal Lahir"
           />
@@ -77,13 +97,15 @@
       </div>
       <div class="field">
         <p class="control">
-          <button class="button is-success" onclick="register()">
+          <button class="button is-success w-1/4" onclick="register()">
             Register
           </button>
         </p>
         <h1 class="subtitle is-6">
-          Do you have account?
-          <span class="create-account" onclick="login()">login here</span>
+          Do you have an account?
+          <span class="text-blue-800 cursor-pointer underline" onclick="login()"
+            >login here</span
+          >
         </h1>
       </div>
     </div>
@@ -99,16 +121,13 @@
         const tgl_lahir = document.getElementById("tgl_lahir").value;
 
         try {
-          const res = await fetch(
-            "https://api-coba.ezra4554.repl.co/api/auth/",
-            {
-              method: "POST",
-              headers: {
-                "Content-Type": "application/json",
-              },
-              body: JSON.stringify({ name, email, password, tgl_lahir }),
-            }
-          );
+          const res = await fetch("http://localhost:3000/api/auth/", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({ name, email, password, tgl_lahir }),
+          });
           if (!res.ok) {
             console.log(await res.json());
           } else {
